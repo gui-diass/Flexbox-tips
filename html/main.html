@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+
+<body>
+    <div>
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo">
+                    <a href="../html/main.html">flexbox dicas</a>
+                </div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <li><a href="#h1-flexbox">O que é flexbox</a></li>
+                    <li><a href="#">Criar eventos</a></li>
+                    <li><a href="#">Armário</a></li>
+                    <li><a href="../html/conta.html">Conta</a></li>
+
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="posicao-conteudo">
+        <div id="div-boas-vindas">
+            <h1 id="h1-boas-vindas">Boas vindas!</h1>
+        </div>
+        <div>
+            <p class="texto">Olá desenvolvedor(a), é um grande prazer ter lo(a) por aqui. Se assim como eu você
+                tem muita dificuldade em organizar os elementos em sua
+                aplicação web, vai aqui algumas dicas que vão economizar muito o seu tempo no aprendizado. O modelo que
+                vamos aprender é o <strong>CSS Flexible Box Layout</strong>,
+                mais conhecido como FlexBox.
+            </p>
+        </div>
+        <div id="div-flexbox">
+            <h1 id="h1-flexbox">O que é flexbox?</h1>
+        </div>
+        <div>
+            <p class="texto">
+                FlexBox é um módulo de caixa flexível, cujo módulo tem como objetivo alinhar, distribuir o espaço entre
+                os contêiners. Ou seja o layout flexível permite que os elementos responsivos dentro de um contêiner
+                sejam
+                organizados automaticamente, dependendo do tamanho da tela.
+            </p>
+        </div>
+        <div id="div-propriedades">
+            <h1 id="h1-propriedades">Propriedades</h1>
+        </div>
+        <div>
+            <h3 id="h3-propriedade">justify-content</h3>
+            <p id="texto-propriedade"> alinha itens horizontalmente e aceita os seguintes valores:</p>
+            <ul>
+                <li>flex-start</li>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = () => {
+            navbar.classList.add("show");
+            menuBtn.classList.add("hide");
+            body.classList.add("disabled");
+        }
+        cancelBtn.onclick = () => {
+            body.classList.remove("disabled");
+            navbar.classList.remove("show");
+            menuBtn.classList.remove("hide");
+        }
+        window.onscroll = () => {
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+    </script>
+</body>
+
+</html>
